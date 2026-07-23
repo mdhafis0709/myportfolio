@@ -69,7 +69,7 @@ export default function Contact() {
   return (
     <section id="contact">
       <h2 className="section-title">Get In Touch</h2>
-      
+
       <div className="contact-container">
         {/* Left Side: Contact Information */}
         <motion.div
@@ -84,7 +84,7 @@ export default function Contact() {
               <Sparkles size={20} style={{ color: 'var(--accent-cyan)' }} />
               Recruiter Hub
             </h3>
-            
+
             <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
               Feel free to reach out directly through any of these communication channels, or send a message using the quick portal form.
             </p>
@@ -199,10 +199,10 @@ export default function Contact() {
                   />
                 </div>
 
-                <button 
-                  type="submit" 
-                  className="btn-primary" 
-                  disabled={isSubmitting} 
+                <button
+                  type="submit"
+                  className="btn-primary"
+                  disabled={isSubmitting}
                   style={{ width: '100%', justifyContent: 'center', opacity: isSubmitting ? 0.7 : 1 }}
                 >
                   {isSubmitting ? 'Transmitting...' : 'Transmit Message'}
