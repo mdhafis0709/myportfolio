@@ -99,7 +99,7 @@ export default function Skills() {
         viewport={{ once: true, margin: '-50px' }}
         transition={{ duration: 0.5 }}
       >
-        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '2.5rem', flexWrap: 'wrap' }}>
+        <div className="skills-competencies-grid">
           <div>
             <h3 style={{ fontSize: '1.4rem', color: 'var(--accent-cyan)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
               <Terminal size={20} />
@@ -115,7 +115,7 @@ export default function Skills() {
             </ul>
           </div>
           
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', borderLeft: '1px solid rgba(255,255,255,0.06)', paddingLeft: '2.5rem' }}>
+          <div className="skills-mission-block">
             <h4 style={{ fontSize: '1.1rem', color: '#fff', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1rem', fontFamily: 'var(--font-mono)' }}>
               Mission Statement
             </h4>

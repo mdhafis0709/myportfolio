@@ -24,7 +24,7 @@ export default function App() {
         <Hero />
 
         {/* Interactive Terminal Widget (Recruiter Hub Highlight) */}
-        <div style={{ padding: '0 10% 50px 10%' }}>
+        <div className="terminal-section-wrapper">
           <h2 style={{ textAlign: 'center', fontSize: '1.6rem', color: 'var(--accent-cyan)', fontFamily: 'var(--font-mono)', marginBottom: '1.5rem' }}>
             &gt;_ Interactive Recruiter Terminal
           </h2>

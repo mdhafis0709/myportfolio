@@ -38,8 +38,7 @@ export default function Education() {
         {educationItems.map((edu, idx) => (
           <motion.div
             key={idx}
-            className="glass-panel"
-            style={{ display: 'flex', gap: '20px', padding: '2rem', alignItems: 'center' }}
+            className="glass-panel education-card"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-50px' }}

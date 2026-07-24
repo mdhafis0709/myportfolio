@@ -54,7 +54,7 @@ export default function Experience() {
                 
                 <h3 className="timeline-role">{exp.role}</h3>
                 
-                <div className="timeline-org" style={{ display: 'flex', justifyContent: isLeft ? 'flex-end' : 'flex-start', flexWrap: 'wrap', gap: '10px', alignItems: 'center', marginTop: '4px' }}>
+                <div className="timeline-org">
                   <span style={{ fontWeight: 600 }}>{exp.company}</span>
                   <span style={{ color: 'var(--text-secondary)', display: 'inline-flex', alignItems: 'center', fontSize: '0.9rem' }}>
                     <MapPin size={14} style={{ marginRight: '3px' }} />

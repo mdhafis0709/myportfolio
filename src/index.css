@@ -325,6 +325,19 @@ section {
   font-weight: 500;
   color: var(--accent-magenta);
   margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.timeline-left .timeline-org {
+  justify-content: flex-end;
+}
+
+.timeline-right .timeline-org {
+  justify-content: flex-start;
 }
 
 .timeline-list {
@@ -729,4 +742,157 @@ section {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+  
+  .timeline-left .timeline-org, .timeline-right .timeline-org {
+    justify-content: flex-start !important;
+  }
 }
+
+/* Additional Responsive Classes & Fixes */
+.terminal-section-wrapper {
+  padding: 0 10% 50px 10%;
+}
+
+.skills-competencies-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+}
+
+.skills-mission-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px solid rgba(255,255,255,0.06);
+  padding-left: 2.5rem;
+}
+
+.education-card {
+  display: flex;
+  gap: 20px;
+  padding: 2rem;
+  align-items: center;
+}
+
+/* Nav toggle button hidden by default on desktop */
+.nav-toggle-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  z-index: 1100;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+}
+
+/* Projects grid minmax safe fallback */
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-name {
+    font-size: 2.6rem !important;
+  }
+  .hero-title {
+    font-size: 1.25rem !important;
+  }
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-actions button, .hero-actions a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .terminal-section-wrapper {
+    padding: 0 5% 30px 5%;
+  }
+  
+  .skills-competencies-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .skills-mission-block {
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-left: 0;
+    padding-top: 1.5rem;
+  }
+  
+  .education-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 1.5rem;
+  }
+  
+  /* Mobile Navigation Drawer styles */
+  .nav-links {
+    display: none !important; /* Hide desktop nav list */
+  }
+  
+  .nav-toggle-btn {
+    display: flex; /* Show hamburger button on mobile */
+  }
+  
+  .nav-mobile-overlay {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 8px;
+    padding: 1.5rem;
+    gap: 1rem;
+    list-style: none;
+    align-items: center;
+  }
+  
+  .nav-mobile-overlay li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .nav-mobile-overlay .nav-link {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .nav-mobile-overlay li:last-child .nav-link {
+    border-bottom: none;
+  }
+}
+
+/* Prompt styles */
+.prompt-mobile {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .prompt-desktop {
+    display: none;
+  }
+  .prompt-mobile {
+    display: inline;
+  }
+  .terminal-body {
+    padding: 12px;
+    height: 300px;
+    font-size: 0.8rem;
+  }
+  .terminal-input {
+    font-size: 0.8rem;
+  }
+}
+
+

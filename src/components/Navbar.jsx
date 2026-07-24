@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Cpu } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('home');
@@ -65,6 +66,40 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
+
+      {/* Mobile Toggle Button */}
+      <button 
+        className="nav-toggle-btn" 
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        aria-label="Toggle navigation menu"
+      >
+        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      {/* Mobile Overlay Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.ul 
+            className="nav-mobile-overlay glass-panel"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+          >
+            {navItems.map((item) => (
+              <li key={item.target}>
+                <span
+                  className={`nav-link ${activeSection === item.target ? 'active' : ''}`}
+                  onClick={() => handleNavClick(item.target)}
+                >
+                  {item.label}
+                </span>
+              </li>
+            ))}
+          </motion.ul>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
+

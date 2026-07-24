@@ -77,7 +77,10 @@ export default function Terminal() {
         {history.map((line, idx) => (
           <div key={idx} className={`terminal-line`}>
             {line.type === 'prompt' && (
-              <span className="terminal-prompt">{line.text}</span>
+              <span className="terminal-prompt">
+                <span className="prompt-desktop">{line.text}</span>
+                <span className="prompt-mobile">{line.text.replace('visitor@hafis-portfolio:~$', 'visitor:~$')}</span>
+              </span>
             )}
             {line.type !== 'prompt' && (
               <span 
@@ -93,7 +96,10 @@ export default function Terminal() {
         ))}
         
         <div className="terminal-input-container">
-          <span className="terminal-prompt">visitor@hafis-portfolio:~$</span>
+          <span className="terminal-prompt">
+            <span className="prompt-desktop">visitor@hafis-portfolio:~$</span>
+            <span className="prompt-mobile">visitor:~$</span>
+          </span>
           <input
             type="text"
             className="terminal-input"
